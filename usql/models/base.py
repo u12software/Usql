@@ -4,6 +4,7 @@ from usql.models.metamodel import MetaModel
 from usql.models.manager import (
     ModelManager
 )
+from usql.query.queryset import QuerySet
 
 
 class Model(
@@ -73,3 +74,49 @@ class Model(
         return ModelManager.count(
             cls
         )
+    
+    @classmethod
+    def first(cls):
+
+        return ModelManager.first(
+            cls
+        )
+
+    @classmethod
+    def last(cls):
+
+        return ModelManager.last(
+            cls
+        )
+    
+    @classmethod
+    def exists(cls, **filters):
+
+        return ModelManager.exists(
+            cls,
+            **filters
+        )
+
+    @classmethod
+    def update(cls, id, **values):
+
+        return ModelManager.update(
+            cls,
+            id,
+            **values
+        )
+    
+    @classmethod
+    def delete(cls, id):
+
+        return ModelManager.delete(
+            cls,
+            id
+        )
+    
+    @classmethod
+    def query(cls):
+
+        return QuerySet(cls)
+
+    
