@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usql"
+version = "0.1.0"
+description = "Universal SQL ORM for Python"
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+    { name = "Equitable Propre" }
+]
+
+dependencies = [
+    "sqlalchemy>=2.0",
+    "psycopg2-binary",
+    "pymysql"
+]
+
+keywords = [
+    "orm",
+    "sql",
+    "sqlite",
+    "postgresql",
+    "mysql",
+    "database"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
